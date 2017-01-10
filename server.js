@@ -35,12 +35,12 @@ app.use( (req, res, next) => {
 
 // middleware which renders maintenance page and stop the app
 // next() is not called so server wont run further
-app.use( (req, res, next) => {
-    res.render('maintenance', {
-        pageTitle: 'Maintenance',
-        welcomeMessage: 'Welcome to home page!'
-    });
-});
+// app.use( (req, res, next) => {
+//     res.render('maintenance', {
+//         pageTitle: 'Maintenance',
+//         welcomeMessage: 'Welcome to home page!'
+//     });
+// });
 
 
 app.use(express.static(__dirname + '/public'));
@@ -71,6 +71,12 @@ app.get('/about', (req, res) => {
     res.render('about', {
         pageTitle: 'About Page',
 
+    });
+});
+
+app.get('/project', (req, res) => {
+    res.render('project', {
+        pageTitle: 'Project Page'
     });
 });
 
